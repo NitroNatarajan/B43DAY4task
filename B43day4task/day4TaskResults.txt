@@ -1,0 +1,560 @@
+ // How to compare two json have the same properties without order;
+let obj1 = {
+  name: "person1",
+  age: 5
+}
+let obj2 = {
+  age: 5,
+  name: "person1",
+}
+for (let key1 in obj1) {
+  let flag = 0;
+  for (let key2 in obj2) {
+    if (obj1[key1] == obj2[key2]) {
+      flag++;
+    }
+  }
+  if (flag > 0) {
+    console.log("Both are same");
+  }
+  else {
+    console.log("Both are Different");
+  }
+}
+
+
+// [Running] node "d:\Guvi class\Day4\B43Day4\B43day4task\task.js"
+// Both are same
+// Both are same
+// [Done] exited with code=0 in 0.102 seconds
+
+
+[Done] exited with code=0 in 0.097 seconds
+// print all the countries,region,subregion and population: 
+let request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all");
+request.send();
+request.onload = function () {
+    let data = request.response;
+    let result = JSON.parse(data);
+    for (let i = 0; i < result.length; i++) {
+        console.log(`${result[i].name.common} === ${result[i].region} === $${result[i].subregion} ===${result[i].population}`);
+    };
+};
+
+Grenada==== Americas====Caribbean====112519
+task.js:40 Malaysia==== Asia====South-Eastern Asia====32365998
+task.js:40 French Guiana==== Americas====South America====254541
+task.js:40 Spain==== Europe====Southern Europe====47351567
+task.js:40 Cook Islands==== Oceania====Polynesia====18100
+task.js:40 Mali==== Africa====Western Africa====20250834
+task.js:40 Libya==== Africa====Northern Africa====6871287
+task.js:40 Western Sahara==== Africa====Northern Africa====510713
+task.js:40 Solomon Islands==== Oceania====Melanesia====686878
+task.js:40 Tunisia==== Africa====Northern Africa====11818618
+task.js:40 Guernsey==== Europe====Northern Europe====62999
+task.js:40 Seychelles==== Africa====Eastern Africa====98462
+task.js:40 British Virgin Islands==== Americas====Caribbean====30237
+task.js:40 Georgia==== Asia====Western Asia====3714000
+task.js:40 Guadeloupe==== Americas====Caribbean====400132
+task.js:40 Syria==== Asia====Western Asia====17500657
+task.js:40 Norway==== Europe====Northern Europe====5379475
+task.js:40 Philippines==== Asia====South-Eastern Asia====109581085
+task.js:40 Iceland==== Europe====Northern Europe====366425
+task.js:40 Mozambique==== Africa====Eastern Africa====31255435
+task.js:40 Palau==== Oceania====Micronesia====18092
+task.js:40 Afghanistan==== Asia====Southern Asia====40218234
+task.js:40 Djibouti==== Africa====Eastern Africa====988002
+task.js:40 Peru==== Americas====South America====32971846
+task.js:40 Luxembourg==== Europe====Western Europe====632275
+task.js:40 Burundi==== Africa====Eastern Africa====11890781
+task.js:40 Guyana==== Americas====South America====786559
+task.js:40 United Kingdom==== Europe====Northern Europe====67215293
+task.js:40 Cocos (Keeling) Islands==== Oceania====Australia and New Zealand====544
+task.js:40 Palestine==== Asia====Western Asia====4803269
+task.js:40 Pitcairn Islands==== Oceania====Polynesia====56
+task.js:40 Barbados==== Americas====Caribbean====287371
+task.js:40 Kiribati==== Oceania====Micronesia====119446
+task.js:40 South Africa==== Africa====Southern Africa====59308690
+task.js:40 Mongolia==== Asia====Eastern Asia====3278292
+task.js:40 Cyprus==== Europe====Southern Europe====1207361
+task.js:40 Mauritius==== Africa====Eastern Africa====1265740
+task.js:40 Antigua and Barbuda==== Americas====Caribbean====97928
+task.js:40 Saint Martin==== Americas====Caribbean====38659
+task.js:40 Réunion==== Africa====Eastern Africa====840974
+task.js:40 Bermuda==== Americas====North America====63903
+task.js:40 Monaco==== Europe====Western Europe====39244
+task.js:40 Curaçao==== Americas====Caribbean====155014
+task.js:40 Jersey==== Europe====Northern Europe====100800
+task.js:40 Cambodia==== Asia====South-Eastern Asia====16718971
+task.js:40 Sudan==== Africa====Northern Africa====43849269
+task.js:40 Guinea==== Africa====Western Africa====13132792
+task.js:40 Turks and Caicos Islands==== Americas====Caribbean====38718
+task.js:40 Martinique==== Americas====Caribbean====378243
+task.js:40 Slovenia==== Europe====Central Europe====2100126
+task.js:40 Iran==== Asia====Southern Asia====83992953
+task.js:40 Sweden==== Europe====Northern Europe====10353442
+task.js:40 Bangladesh==== Asia====Southern Asia====164689383
+task.js:40 South Georgia==== Antarctic====undefined====30
+task.js:40 United States Virgin Islands==== Americas====Caribbean====106290
+task.js:40 French Southern and Antarctic Lands==== Antarctic====undefined====400
+task.js:40 Maldives==== Asia====Southern Asia====540542
+task.js:40 Greece==== Europe====Southern Europe====10715549
+task.js:40 Estonia==== Europe====Northern Europe====1331057
+task.js:40 Malta==== Europe====Southern Europe====525285
+task.js:40 French Polynesia==== Oceania====Polynesia====280904
+task.js:40 Saint Lucia==== Americas====Caribbean====183629
+task.js:40 Rwanda==== Africa====Eastern Africa====12952209
+task.js:40 Russia==== Europe====Eastern Europe====144104080
+task.js:40 Belarus==== Europe====Eastern Europe====9398861
+task.js:40 Croatia==== Europe====Southeast Europe====4047200
+task.js:40 Saint Barthélemy==== Americas====Caribbean====4255
+task.js:40 Gibraltar==== Europe====Southern Europe====33691
+task.js:40 Heard Island and McDonald Islands==== Antarctic====undefined====0
+task.js:40 Chile==== Americas====South America====19116209
+task.js:40 Armenia==== Asia====Western Asia====2963234
+task.js:40 Haiti==== Americas====Caribbean====11402533
+task.js:40 DR Congo==== Africa====Middle Africa====108407721
+task.js:40 Guam==== Oceania====Micronesia====168783
+task.js:40 Åland Islands==== Europe====Northern Europe====29458
+task.js:40 Iraq==== Asia====Western Asia====40222503
+task.js:40 Denmark==== Europe====Northern Europe====5831404
+task.js:40 Nigeria==== Africa====Western Africa====206139587
+task.js:40 Malawi==== Africa====Eastern Africa====19129955
+task.js:40 Colombia==== Americas====South America====50882884
+task.js:40 Guatemala==== Americas====Central America====16858333
+task.js:40 Falkland Islands==== Americas====South America====2563
+task.js:40 Trinidad and Tobago==== Americas====Caribbean====1399491
+task.js:40 North Korea==== Asia====Eastern Asia====25778815
+task.js:40 Tuvalu==== Oceania====Polynesia====11792
+task.js:40 Indonesia==== Asia====South-Eastern Asia====273523621
+task.js:40 Ethiopia==== Africa====Eastern Africa====114963583
+task.js:40 Bolivia==== Americas====South America====11673029
+task.js:40 Sierra Leone==== Africa====Western Africa====7976985
+task.js:40 Montenegro==== Europe====Southeast Europe====621718
+task.js:40 Australia==== Oceania====Australia and New Zealand====25687041
+task.js:40 Republic of the Congo==== Africa====Middle Africa====5657000
+task.js:40 Burkina Faso==== Africa====Western Africa====20903278
+task.js:40 Israel==== Asia====Western Asia====9216900
+task.js:40 Uruguay==== Americas====South America====3473727
+task.js:40 Ireland==== Europe====Northern Europe====4994724
+task.js:40 Christmas Island==== Oceania====Australia and New Zealand====2072
+task.js:40 Caribbean Netherlands==== Americas====Caribbean====25987
+task.js:40 Taiwan==== Asia====Eastern Asia====23503349
+task.js:40 Botswana==== Africa====Southern Africa====2351625
+task.js:40 Zambia==== Africa====Eastern Africa====18383956
+task.js:40 Gabon==== Africa====Middle Africa====2225728
+task.js:40 Finland==== Europe====Northern Europe====5530719
+task.js:40 Macau==== Asia====Eastern Asia====649342
+task.js:40 Antarctica==== Antarctic====undefined====1000
+task.js:40 El Salvador==== Americas====Central America====6486201
+task.js:40 United States==== Americas====North America====329484123
+task.js:40 Marshall Islands==== Oceania====Micronesia====59194
+task.js:40 Fiji==== Oceania====Melanesia====896444
+task.js:40 Germany==== Europe====Western Europe====83240525
+task.js:40 Belize==== Americas====Central America====397621
+task.js:40 Zimbabwe==== Africa====Southern Africa====14862927
+task.js:40 Qatar==== Asia====Western Asia====2881060
+task.js:40 Anguilla==== Americas====Caribbean====13452
+task.js:40 Angola==== Africa====Middle Africa====32866268
+task.js:40 Italy==== Europe====Southern Europe====59554023
+task.js:40 Togo==== Africa====Western Africa====8278737
+task.js:40 Northern Mariana Islands==== Oceania====Micronesia====57557
+task.js:40 New Zealand==== Oceania====Australia and New Zealand====5084300
+task.js:40 Myanmar==== Asia====South-Eastern Asia====54409794
+task.js:40 Oman==== Asia====Western Asia====5106622
+task.js:40 Samoa==== Oceania====Polynesia====198410
+task.js:40 Benin==== Africa====Western Africa====12123198
+task.js:40 Saint Kitts and Nevis==== Americas====Caribbean====53192
+task.js:40 Mauritania==== Africa====Western Africa====4649660
+task.js:40 United States Minor Outlying Islands==== Americas====North America====300
+task.js:40 Greenland==== Americas====North America====56367
+task.js:40 Bosnia and Herzegovina==== Europe====Southeast Europe====3280815
+task.js:40 Eswatini==== Africa====Southern Africa====1160164
+task.js:40 Vatican City==== Europe====Southern Europe====451
+task.js:40 France==== Europe====Western Europe====67391582
+task.js:40 Poland==== Europe====Central Europe====37950802
+task.js:40 Comoros==== Africa====Eastern Africa====869595
+task.js:40 Papua New Guinea==== Oceania====Melanesia====8947027
+task.js:40 Kenya==== Africa====Eastern Africa====53771300
+task.js:40 Vietnam==== Asia====South-Eastern Asia====97338583
+task.js:40 Vanuatu==== Oceania====Melanesia====307150
+task.js:40 Guinea-Bissau==== Africa====Western Africa====1967998
+task.js:40 Saint Pierre and Miquelon==== Americas====North America====6069
+task.js:40 Saint Helena, Ascension and Tristan da Cunha==== Africa====Western Africa====53192
+task.js:40 Uganda==== Africa====Eastern Africa====45741000
+task.js:40 Uzbekistan==== Asia====Central Asia====34232050
+task.js:40 New Caledonia==== Oceania====Melanesia====271960
+task.js:40 Paraguay==== Americas====South America====7132530
+task.js:40 Canada==== Americas====North America====38005238
+task.js:40 Niue==== Oceania====Polynesia====1470
+task.js:40 Thailand==== Asia====South-Eastern Asia====69799978
+task.js:40 Austria==== Europe====Central Europe====8917205
+task.js:40 Bahrain==== Asia====Western Asia====1701583
+task.js:40 Nepal==== Asia====Southern Asia====29136808
+task.js:40 Algeria==== Africa====Northern Africa====44700000
+task.js:40 Kazakhstan==== Asia====Central Asia====18754440
+task.js:40 Laos==== Asia====South-Eastern Asia====7275556
+task.js:40 Kosovo==== Europe====Southeast Europe====1775378
+task.js:40 Ivory Coast==== Africa====Western Africa====26378275
+task.js:40 Cayman Islands==== Americas====Caribbean====65720
+task.js:40 Chad==== Africa====Middle Africa====16425859
+task.js:40 Turkmenistan==== Asia====Central Asia====6031187
+task.js:40 Puerto Rico==== Americas====Caribbean====3194034
+task.js:40 Brazil==== Americas====South America====212559409
+task.js:40 Romania==== Europe====Southeast Europe====19286123
+task.js:40 Sint Maarten==== Americas====Caribbean====40812
+task.js:40 Switzerland==== Europe====Western Europe====8654622
+task.js:40 São Tomé and Príncipe==== Africa====Middle Africa====219161
+task.js:40 Pakistan==== Asia====Southern Asia====220892331
+task.js:40 Turkey==== Asia====Western Asia====84339067
+task.js:40 Suriname==== Americas====South America====586634
+task.js:40 Norfolk Island==== Oceania====Australia and New Zealand====2302
+task.js:40 Singapore==== Asia====South-Eastern Asia====5685807
+task.js:40 Tanzania==== Africa====Eastern Africa====59734213
+task.js:40 Micronesia==== Oceania====Micronesia====115021
+task.js:40 Slovakia==== Europe====Central Europe====5458827
+task.js:40 Hong Kong==== Asia====Eastern Asia====7500700
+task.js:40 Albania==== Europe====Southeast Europe====2837743
+task.js:40 India==== Asia====Southern Asia====1380004385
+task.js:40 Nicaragua==== Americas====Central America====6624554
+task.js:40 Japan==== Asia====Eastern Asia====125836021
+task.js:40 Argentina==== Americas====South America====45376763
+task.js:40 Cape Verde==== Africa====Western Africa====555988
+task.js:40 Moldova==== Europe====Eastern Europe====2617820
+task.js:40 Panama==== Americas====Central America====4314768
+task.js:40 Svalbard and Jan Mayen==== Europe====Northern Europe====2562
+task.js:40 Tonga==== Oceania====Polynesia====105697
+task.js:40 Saint Vincent and the Grenadines==== Americas====Caribbean====110947
+task.js:40 Czechia==== Europe====Central Europe====10698896
+task.js:40 Madagascar==== Africa====Eastern Africa====27691019
+task.js:40 Belgium==== Europe====Western Europe====11555997
+task.js:40 Hungary==== Europe====Central Europe====9749763
+task.js:40 Dominican Republic==== Americas====Caribbean====10847904
+task.js:40 Egypt==== Africa====Northern Africa====102334403
+task.js:40 Nauru==== Oceania====Micronesia====10834
+task.js:40 Cameroon==== Africa====Middle Africa====26545864
+task.js:40 Jamaica==== Americas====Caribbean====2961161
+task.js:40 Bouvet Island==== Antarctic====undefined====0
+task.js:40 Saudi Arabia==== Asia====Western Asia====34813867
+task.js:40 Azerbaijan==== Asia====Western Asia====10110116
+task.js:40 Jordan==== Asia====Western Asia====10203140
+task.js:40 Lithuania==== Europe====Northern Europe====2794700
+task.js:40 Isle of Man==== Europe====Northern Europe====85032
+task.js:40 Equatorial Guinea==== Africa====Middle Africa====1402985
+task.js:40 Costa Rica==== Americas====Central America====5094114
+task.js:40 Cuba==== Americas====Caribbean====11326616
+task.js:40 Dominica==== Americas====Caribbean====71991
+task.js:40 Central African Republic==== Africa====Middle Africa====4829764
+task.js:40 Namibia==== Africa====Southern Africa====2540916
+task.js:40 Tokelau==== Oceania====Polynesia====1411
+task.js:40 Montserrat==== Americas====Caribbean====4922
+task.js:40 Serbia==== Europe====Southeast Europe====6908224
+task.js:40 Kuwait==== Asia====Western Asia====4270563
+task.js:40 Niger==== Africa====Western Africa====24206636
+task.js:40 San Marino==== Europe====Southern Europe====33938
+task.js:40 Ukraine==== Europe====Eastern Europe====44134693
+task.js:40 Bhutan==== Asia====Southern Asia====771612
+task.js:40 Yemen==== Asia====Western Asia====29825968
+task.js:40 Venezuela==== Americas====South America====28435943
+task.js:40 Morocco==== Africa====Northern Africa====36910558
+task.js:40 Brunei==== Asia====South-Eastern Asia====437483
+task.js:40 Senegal==== Africa====Western Africa====16743930
+task.js:40 South Sudan==== Africa====Middle Africa====11193729
+task.js:40 Netherlands==== Europe====Western Europe====16655799
+task.js:40 Liechtenstein==== Europe====Western Europe====38137
+task.js:40 Andorra==== Europe====Southern Europe====77265
+task.js:40 Lebanon==== Asia====Western Asia====6825442
+task.js:40 Latvia==== Europe====Northern Europe====1901548
+task.js:40 North Macedonia==== Europe====Southeast Europe====2077132
+task.js:40 Portugal==== Europe====Southern Europe====10305564
+task.js:40 Mexico==== Americas====North America====128932753
+task.js:40 Bahamas==== Americas====Caribbean====393248
+task.js:40 Mayotte==== Africa====Eastern Africa====226915
+task.js:40 China==== Asia====Eastern Asia====1402112000
+task.js:40 Kyrgyzstan==== Asia====Central Asia====6591600
+task.js:40 Wallis and Futuna==== Oceania====Polynesia====11750
+task.js:40 Gambia==== Africa====Western Africa====2416664
+task.js:40 Timor-Leste==== Asia====South-Eastern Asia====1318442
+task.js:40 Eritrea==== Africa====Eastern Africa====5352000
+task.js:40 Tajikistan==== Asia====Central Asia====9537642
+task.js:40 Sri Lanka==== Asia====Southern Asia====21919000
+task.js:40 Bulgaria==== Europe====Southeast Europe====6927288
+task.js:40 Lesotho==== Africa====Southern Africa====2142252
+task.js:40 British Indian Ocean Territory==== Africa====Eastern Africa====3000
+task.js:40 South Korea==== Asia====Eastern Asia====51780579
+task.js:40 Somalia==== Africa====Eastern Africa====15893219
+task.js:40 Ghana==== Africa====Western Africa====31072945
+task.js:40 American Samoa==== Oceania====Polynesia====55197
+task.js:40 Liberia==== Africa====Western Africa====5057677
+task.js:40 Faroe Islands==== Europe====Northern Europe====48865
+task.js:40 United Arab Emirates==== Asia====Western Asia====9890400
+task.js:40 Honduras==== Americas====Central America====9904608
+task.js:40 Ecuador==== Americas====South America====17643060
+task.js:40 Aruba==== Americas====Caribbean====106766
+
+
+//results for flags:
+
+let request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all");
+request.send();
+request.onload = function () {
+    let data = request.response;
+    let result = JSON.parse(data);
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i].flags.png);
+    };
+};
+
+//results
+https://flagcdn.com/w320/gd.png
+task.js:53 https://flagcdn.com/w320/my.png
+task.js:53 https://flagcdn.com/w320/gf.png
+task.js:53 https://flagcdn.com/w320/es.png
+task.js:53 https://flagcdn.com/w320/ck.png
+task.js:53 https://flagcdn.com/w320/ml.png
+task.js:53 https://flagcdn.com/w320/ly.png
+task.js:53 https://flagcdn.com/w320/eh.png
+task.js:53 https://flagcdn.com/w320/sb.png
+task.js:53 https://flagcdn.com/w320/tn.png
+task.js:53 https://flagcdn.com/w320/gg.png
+task.js:53 https://flagcdn.com/w320/sc.png
+task.js:53 https://flagcdn.com/w320/vg.png
+task.js:53 https://flagcdn.com/w320/ge.png
+task.js:53 https://flagcdn.com/w320/gp.png
+task.js:53 https://flagcdn.com/w320/sy.png
+task.js:53 https://flagcdn.com/w320/no.png
+task.js:53 https://flagcdn.com/w320/ph.png
+task.js:53 https://flagcdn.com/w320/is.png
+task.js:53 https://flagcdn.com/w320/mz.png
+task.js:53 https://flagcdn.com/w320/pw.png
+task.js:53 https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png
+task.js:53 https://flagcdn.com/w320/dj.png
+task.js:53 https://flagcdn.com/w320/pe.png
+task.js:53 https://flagcdn.com/w320/lu.png
+task.js:53 https://flagcdn.com/w320/bi.png
+task.js:53 https://flagcdn.com/w320/gy.png
+task.js:53 https://flagcdn.com/w320/gb.png
+task.js:53 https://flagcdn.com/w320/cc.png
+task.js:53 https://flagcdn.com/w320/ps.png
+task.js:53 https://flagcdn.com/w320/pn.png
+task.js:53 https://flagcdn.com/w320/bb.png
+task.js:53 https://flagcdn.com/w320/ki.png
+task.js:53 https://flagcdn.com/w320/za.png
+task.js:53 https://flagcdn.com/w320/mn.png
+task.js:53 https://flagcdn.com/w320/cy.png
+task.js:53 https://flagcdn.com/w320/mu.png
+task.js:53 https://flagcdn.com/w320/ag.png
+task.js:53 https://flagcdn.com/w320/mf.png
+task.js:53 https://flagcdn.com/w320/re.png
+task.js:53 https://flagcdn.com/w320/bm.png
+task.js:53 https://flagcdn.com/w320/mc.png
+task.js:53 https://flagcdn.com/w320/cw.png
+task.js:53 https://flagcdn.com/w320/je.png
+task.js:53 https://flagcdn.com/w320/kh.png
+task.js:53 https://flagcdn.com/w320/sd.png
+task.js:53 https://flagcdn.com/w320/gn.png
+task.js:53 https://flagcdn.com/w320/tc.png
+task.js:53 https://flagcdn.com/w320/mq.png
+task.js:53 https://flagcdn.com/w320/si.png
+task.js:53 https://flagcdn.com/w320/ir.png
+task.js:53 https://flagcdn.com/w320/se.png
+task.js:53 https://flagcdn.com/w320/bd.png
+task.js:53 https://flagcdn.com/w320/gs.png
+task.js:53 https://flagcdn.com/w320/vi.png
+task.js:53 https://flagcdn.com/w320/tf.png
+task.js:53 https://flagcdn.com/w320/mv.png
+task.js:53 https://flagcdn.com/w320/gr.png
+task.js:53 https://flagcdn.com/w320/ee.png
+task.js:53 https://flagcdn.com/w320/mt.png
+task.js:53 https://flagcdn.com/w320/pf.png
+task.js:53 https://flagcdn.com/w320/lc.png
+task.js:53 https://flagcdn.com/w320/rw.png
+task.js:53 https://flagcdn.com/w320/ru.png
+task.js:53 https://flagcdn.com/w320/by.png
+task.js:53 https://flagcdn.com/w320/hr.png
+task.js:53 https://flagcdn.com/w320/bl.png
+task.js:53 https://flagcdn.com/w320/gi.png
+task.js:53 https://flagcdn.com/w320/hm.png
+task.js:53 https://flagcdn.com/w320/cl.png
+task.js:53 https://flagcdn.com/w320/am.png
+task.js:53 https://flagcdn.com/w320/ht.png
+task.js:53 https://flagcdn.com/w320/cd.png
+task.js:53 https://flagcdn.com/w320/gu.png
+task.js:53 https://flagcdn.com/w320/ax.png
+task.js:53 https://flagcdn.com/w320/iq.png
+task.js:53 https://flagcdn.com/w320/dk.png
+task.js:53 https://flagcdn.com/w320/ng.png
+task.js:53 https://flagcdn.com/w320/mw.png
+task.js:53 https://flagcdn.com/w320/co.png
+task.js:53 https://flagcdn.com/w320/gt.png
+task.js:53 https://flagcdn.com/w320/fk.png
+task.js:53 https://flagcdn.com/w320/tt.png
+task.js:53 https://flagcdn.com/w320/kp.png
+task.js:53 https://flagcdn.com/w320/tv.png
+task.js:53 https://flagcdn.com/w320/id.png
+task.js:53 https://flagcdn.com/w320/et.png
+task.js:53 https://flagcdn.com/w320/bo.png
+task.js:53 https://flagcdn.com/w320/sl.png
+task.js:53 https://flagcdn.com/w320/me.png
+task.js:53 https://flagcdn.com/w320/au.png
+task.js:53 https://flagcdn.com/w320/cg.png
+task.js:53 https://flagcdn.com/w320/bf.png
+task.js:53 https://flagcdn.com/w320/il.png
+task.js:53 https://flagcdn.com/w320/uy.png
+task.js:53 https://flagcdn.com/w320/ie.png
+task.js:53 https://flagcdn.com/w320/cx.png
+task.js:53 https://flagcdn.com/w320/bq.png
+task.js:53 https://flagcdn.com/w320/tw.png
+task.js:53 https://flagcdn.com/w320/bw.png
+task.js:53 https://flagcdn.com/w320/zm.png
+task.js:53 https://flagcdn.com/w320/ga.png
+task.js:53 https://flagcdn.com/w320/fi.png
+task.js:53 https://flagcdn.com/w320/mo.png
+task.js:53 https://flagcdn.com/w320/aq.png
+task.js:53 https://flagcdn.com/w320/sv.png
+task.js:53 https://flagcdn.com/w320/us.png
+task.js:53 https://flagcdn.com/w320/mh.png
+task.js:53 https://flagcdn.com/w320/fj.png
+task.js:53 https://flagcdn.com/w320/de.png
+task.js:53 https://flagcdn.com/w320/bz.png
+task.js:53 https://flagcdn.com/w320/zw.png
+task.js:53 https://flagcdn.com/w320/qa.png
+task.js:53 https://flagcdn.com/w320/ai.png
+task.js:53 https://flagcdn.com/w320/ao.png
+task.js:53 https://flagcdn.com/w320/it.png
+task.js:53 https://flagcdn.com/w320/tg.png
+task.js:53 https://flagcdn.com/w320/mp.png
+task.js:53 https://flagcdn.com/w320/nz.png
+task.js:53 https://flagcdn.com/w320/mm.png
+task.js:53 https://flagcdn.com/w320/om.png
+task.js:53 https://flagcdn.com/w320/ws.png
+task.js:53 https://flagcdn.com/w320/bj.png
+task.js:53 https://flagcdn.com/w320/kn.png
+task.js:53 https://flagcdn.com/w320/mr.png
+task.js:53 https://flagcdn.com/w320/um.png
+task.js:53 https://flagcdn.com/w320/gl.png
+task.js:53 https://flagcdn.com/w320/ba.png
+task.js:53 https://flagcdn.com/w320/sz.png
+task.js:53 https://flagcdn.com/w320/va.png
+task.js:53 https://flagcdn.com/w320/fr.png
+task.js:53 https://flagcdn.com/w320/pl.png
+task.js:53 https://flagcdn.com/w320/km.png
+task.js:53 https://flagcdn.com/w320/pg.png
+task.js:53 https://flagcdn.com/w320/ke.png
+task.js:53 https://flagcdn.com/w320/vn.png
+task.js:53 https://flagcdn.com/w320/vu.png
+task.js:53 https://flagcdn.com/w320/gw.png
+task.js:53 https://flagcdn.com/w320/pm.png
+task.js:53 https://flagcdn.com/w320/sh.png
+task.js:53 https://flagcdn.com/w320/ug.png
+task.js:53 https://flagcdn.com/w320/uz.png
+task.js:53 https://flagcdn.com/w320/nc.png
+task.js:53 https://flagcdn.com/w320/py.png
+task.js:53 https://flagcdn.com/w320/ca.png
+task.js:53 https://flagcdn.com/w320/nu.png
+task.js:53 https://flagcdn.com/w320/th.png
+task.js:53 https://flagcdn.com/w320/at.png
+task.js:53 https://flagcdn.com/w320/bh.png
+task.js:53 https://flagcdn.com/w320/np.png
+task.js:53 https://flagcdn.com/w320/dz.png
+task.js:53 https://flagcdn.com/w320/kz.png
+task.js:53 https://flagcdn.com/w320/la.png
+task.js:53 https://flagcdn.com/w320/xk.png
+task.js:53 https://flagcdn.com/w320/ci.png
+task.js:53 https://flagcdn.com/w320/ky.png
+task.js:53 https://flagcdn.com/w320/td.png
+task.js:53 https://flagcdn.com/w320/tm.png
+task.js:53 https://flagcdn.com/w320/pr.png
+task.js:53 https://flagcdn.com/w320/br.png
+task.js:53 https://flagcdn.com/w320/ro.png
+task.js:53 https://flagcdn.com/w320/sx.png
+task.js:53 https://flagcdn.com/w320/ch.png
+task.js:53 https://flagcdn.com/w320/st.png
+task.js:53 https://flagcdn.com/w320/pk.png
+task.js:53 https://flagcdn.com/w320/tr.png
+task.js:53 https://flagcdn.com/w320/sr.png
+task.js:53 https://flagcdn.com/w320/nf.png
+task.js:53 https://flagcdn.com/w320/sg.png
+task.js:53 https://flagcdn.com/w320/tz.png
+task.js:53 https://flagcdn.com/w320/fm.png
+task.js:53 https://flagcdn.com/w320/sk.png
+task.js:53 https://flagcdn.com/w320/hk.png
+task.js:53 https://flagcdn.com/w320/al.png
+task.js:53 https://flagcdn.com/w320/in.png
+task.js:53 https://flagcdn.com/w320/ni.png
+task.js:53 https://flagcdn.com/w320/jp.png
+task.js:53 https://flagcdn.com/w320/ar.png
+task.js:53 https://flagcdn.com/w320/cv.png
+task.js:53 https://flagcdn.com/w320/md.png
+task.js:53 https://flagcdn.com/w320/pa.png
+task.js:53 https://flagcdn.com/w320/sj.png
+task.js:53 https://flagcdn.com/w320/to.png
+task.js:53 https://flagcdn.com/w320/vc.png
+task.js:53 https://flagcdn.com/w320/cz.png
+task.js:53 https://flagcdn.com/w320/mg.png
+task.js:53 https://flagcdn.com/w320/be.png
+task.js:53 https://flagcdn.com/w320/hu.png
+task.js:53 https://flagcdn.com/w320/do.png
+task.js:53 https://flagcdn.com/w320/eg.png
+task.js:53 https://flagcdn.com/w320/nr.png
+task.js:53 https://flagcdn.com/w320/cm.png
+task.js:53 https://flagcdn.com/w320/jm.png
+task.js:53 https://flagcdn.com/w320/bv.png
+task.js:53 https://flagcdn.com/w320/sa.png
+task.js:53 https://flagcdn.com/w320/az.png
+task.js:53 https://flagcdn.com/w320/jo.png
+task.js:53 https://flagcdn.com/w320/lt.png
+task.js:53 https://flagcdn.com/w320/im.png
+task.js:53 https://flagcdn.com/w320/gq.png
+task.js:53 https://flagcdn.com/w320/cr.png
+task.js:53 https://flagcdn.com/w320/cu.png
+task.js:53 https://flagcdn.com/w320/dm.png
+task.js:53 https://flagcdn.com/w320/cf.png
+task.js:53 https://flagcdn.com/w320/na.png
+task.js:53 https://flagcdn.com/w320/tk.png
+task.js:53 https://flagcdn.com/w320/ms.png
+task.js:53 https://flagcdn.com/w320/rs.png
+task.js:53 https://flagcdn.com/w320/kw.png
+task.js:53 https://flagcdn.com/w320/ne.png
+task.js:53 https://flagcdn.com/w320/sm.png
+task.js:53 https://flagcdn.com/w320/ua.png
+task.js:53 https://flagcdn.com/w320/bt.png
+task.js:53 https://flagcdn.com/w320/ye.png
+task.js:53 https://flagcdn.com/w320/ve.png
+task.js:53 https://flagcdn.com/w320/ma.png
+task.js:53 https://flagcdn.com/w320/bn.png
+task.js:53 https://flagcdn.com/w320/sn.png
+task.js:53 https://flagcdn.com/w320/ss.png
+task.js:53 https://flagcdn.com/w320/nl.png
+task.js:53 https://flagcdn.com/w320/li.png
+task.js:53 https://flagcdn.com/w320/ad.png
+task.js:53 https://flagcdn.com/w320/lb.png
+task.js:53 https://flagcdn.com/w320/lv.png
+task.js:53 https://flagcdn.com/w320/mk.png
+task.js:53 https://flagcdn.com/w320/pt.png
+task.js:53 https://flagcdn.com/w320/mx.png
+task.js:53 https://flagcdn.com/w320/bs.png
+task.js:53 https://flagcdn.com/w320/yt.png
+task.js:53 https://flagcdn.com/w320/cn.png
+task.js:53 https://flagcdn.com/w320/kg.png
+task.js:53 https://flagcdn.com/w320/wf.png
+task.js:53 https://flagcdn.com/w320/gm.png
+task.js:53 https://flagcdn.com/w320/tl.png
+task.js:53 https://flagcdn.com/w320/er.png
+task.js:53 https://flagcdn.com/w320/tj.png
+task.js:53 https://flagcdn.com/w320/lk.png
+task.js:53 https://flagcdn.com/w320/bg.png
+task.js:53 https://flagcdn.com/w320/ls.png
+task.js:53 https://flagcdn.com/w320/io.png
+task.js:53 https://flagcdn.com/w320/kr.png
+task.js:53 https://flagcdn.com/w320/so.png
+task.js:53 https://flagcdn.com/w320/gh.png
+task.js:53 https://flagcdn.com/w320/as.png
+task.js:53 https://flagcdn.com/w320/lr.png
+task.js:53 https://flagcdn.com/w320/fo.png
+task.js:53 https://flagcdn.com/w320/ae.png
+task.js:53 https://flagcdn.com/w320/hn.png
+task.js:53 https://flagcdn.com/w320/ec.png
+task.js:53 https://flagcdn.com/w320/aw.png
